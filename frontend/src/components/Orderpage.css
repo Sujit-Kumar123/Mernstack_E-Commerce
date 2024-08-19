@@ -1,0 +1,40 @@
+.cart-item-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.cart-item-image {
+    object-fit: cover;
+    height: 100%;
+}
+
+.checkout-section {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+.checkout-section h2 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.checkout-section .text-center {
+    margin-bottom: 20px;
+}
+
+.checkout-section button {
+    width: 100%;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.action-buttons .btn {
+    flex: 1;
+}

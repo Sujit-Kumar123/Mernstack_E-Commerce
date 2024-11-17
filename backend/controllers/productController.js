@@ -7,9 +7,23 @@ const Comment = require("../models/Comment");
 function isFileTypeSupported(type, supportedTypes) {
     return supportedTypes.includes(type);
 }
-
+async function isCloudinaryConnected() {
+    try {
+        const response = await cloudinary.api.ping();
+        console.log("Cloudinary connected successfully:", response);
+        return true;
+    } catch (error) {
+        console.error("Cloudinary connection failed:", error.message);
+        return false;
+    }
+}
 // Function to upload a file to Cloudinary with retry logic
 async function uploadFileToCloudinary(file, folder, quality, retryCount = 5) {
+        // Check Cloudinary connection
+    const isConnected = await isCloudinaryConnected();
+    if (!isConnected) {
+        throw new Error("Cloudinary is not connected. Cannot proceed with file upload.");
+    }
     const date = new Date()
     const options = {
         folder: folder,

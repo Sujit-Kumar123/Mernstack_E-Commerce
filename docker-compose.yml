@@ -12,6 +12,9 @@ services:
     environment:
       - GENERATE_SOURCEMAP=false
       - MONGO_URI=mongodb://mongodb:27017/ecommerce_app
+      - CLOUD_NAME =dzcncvixe
+      - API_KEY =246252659455426
+      - API_SECRET =CrQqEhNT5tLTj5UXrzVDHyO8eJk
     ports:
       - "8001:8001"
     volumes:

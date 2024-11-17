@@ -25,7 +25,8 @@ app.use(fileupload({
 // connecting to Cloudinary
 const connectDB = require("./config/db");
 connectDB();
-
+const cloudinaryConnect=require("./config/cloudinary")
+cloudinaryConnect();
 
 app.get("/", (req, res) => {
     res.send("<h2>Welcome to the homepage</h2>");
